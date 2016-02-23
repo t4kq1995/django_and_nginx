@@ -1,0 +1,59 @@
+1) ssh root@ip_adress // коннектимся по ssh
+2) passwd // меняем пароль
+
+3) apt-get update // обновляем список пакетов
+4) apt-get upgrade // ставим новые версии пакетов
+5) apt-get install python-pip python-dev libpq-dev postgresql postgresql-contrib // ставим postgresql | django компоненты
+
+6) su - postgres
+7) psql
+8) CREATE DATABASE myproject;
+CREATE USER myprojectuser WITH PASSWORD 'password';
+ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
+ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
+ALTER ROLE myprojectuser SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
+\q
+exit
+
+9) pip install virtualenv
+10) virtualenv -p /usr/bin/python virtualenv
+11) pip install django psycopg2
+
+12) apt-get install git
+13) ssh-keygen
+14) cat ~/.ssh/id_rsa.pub
+
+15) apt-get install libjpeg8-dev // for correct Pillow
+16) pip install -r requirements.txt
+17) enter in the current directory
+18) python manage.py migrate
+19) python manage.py createsuperuser
+
+20) pip install gunicorn
+21) cd /bin
+22) touch gunicorn_start
+23) chmod 777 /bin/gunicorn_start
+24) apt-get install nano
+25) nano gunicorn_bin
+26) open Gunicorn.txt
+
+27) apt-get install supervisor
+28) cd /etc/supervisor/conf.d
+29) touch project.conf
+30) open Supervisor.txt
+31) mkdir -p /project/config/logs/
+32) touch /project/config/logs/gunicorn_supervisor.log
+33) supervisorctl reread
+34) supervisorctl update
+
+35) apt-get install nginx
+36) service nginx start
+37) cd /etc/nginx/sites-available/
+38) touch project
+39) open Nginx.txt
+40) ln -s /etc/nginx/sites-available/project /etc/nginx/sites-enabled/project
+41) service nginx restart
+
+
+ 
